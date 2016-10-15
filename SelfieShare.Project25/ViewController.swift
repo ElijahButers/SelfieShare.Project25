@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UICollectionViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    var images = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
