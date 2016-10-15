@@ -29,6 +29,15 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         
         return images.count
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageView", for: indexPath)
+        
+        if let imageView = cell.viewWithTag(1000) as? UIImageView {
+            imageView.image = images[indexPath.item]
+        }
+    }
 
 }
 
