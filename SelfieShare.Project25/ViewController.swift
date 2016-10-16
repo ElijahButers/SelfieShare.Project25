@@ -37,6 +37,16 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         if let imageView = cell.viewWithTag(1000) as? UIImageView {
             imageView.image = images[indexPath.item]
         }
+        
+        return cell
+    }
+    
+    func importPicture() {
+        
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
     }
 
 }
