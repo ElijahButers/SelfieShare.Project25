@@ -76,6 +76,19 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         present(ac, animated: true)
         
     }
-
+    
+    func startHosting(action: UIAlertAction!) {
+        
+        mcAdviserAssistant = MCAdvertiserAssistant(serviceType: "hws-project", discoveryInfo: nil, session:MCSession)
+        mcAdviserAssistant.start()
+    }
+    
+    func joinSession(action: UIAlertAction!) {
+        
+        let mcBrowser = MCBrowserViewController(serviceType: "hws-project25", session: mcSession)
+        mcBrowser.delegate = self
+        present(mcBrowser, animated: true)
+    }
+ 
 }
 
