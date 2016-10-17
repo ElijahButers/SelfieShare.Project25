@@ -46,6 +46,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="YpZ-jH-Xmu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="RCK-g7-OBo"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Ml0-nn-WVS"/>
                     </navigationItem>
                 </collectionViewController>
