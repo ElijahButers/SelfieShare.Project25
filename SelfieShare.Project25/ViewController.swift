@@ -17,6 +17,7 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         // Do any additional setup after loading the view, typically from a nib.
         title = "Selfie share"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(importPicture))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showConnectionPrompt))
     }
 
     override func didReceiveMemoryWarning() {
