@@ -12,6 +12,9 @@ import MultipeerConnectivity
 class ViewController: UICollectionViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var images = [UIImage]()
+    var peerID: MCPeerID!
+    var mcSession: MCSession!
+    var mcAdviserAssistant: MCAdvertiserAssistant!
 
     override func viewDidLoad() {
         super.viewDidLoad()
