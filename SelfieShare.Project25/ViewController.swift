@@ -100,6 +100,16 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         mcBrowser.delegate = self
         present(mcBrowser, animated: true)
     }
+    
+    // Multipeer browser
+    
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true)
+    }
+    
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true)
+    }
  
 }
 
