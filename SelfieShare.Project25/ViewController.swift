@@ -61,6 +61,16 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?) {
     }
     
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        
+        if let image = UIImage(data: data) {
+            DispatchQueue.main.async { [unowned self] in
+                self.images.insert(image, at: 0)
+                self.collectionView?.reloadData()
+            }
+        }
+    }
+    
     func importPicture() {
         
         let picker = UIImagePickerController()
