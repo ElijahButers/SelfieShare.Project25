@@ -71,6 +71,18 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         }
     }
     
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        
+        switch state {
+        case MCSessionState.connected:
+            print("Connected: \(peerID.displayName)")
+        case MCSessionState.connecting:
+            print("Connecting: \(peerID.displayName)")
+        case MCSessionState.notConnected:
+            print("Not Connected: \(peerID.displayName)")
+        }
+    }
+    
     func importPicture() {
         
         let picker = UIImagePickerController()
@@ -102,16 +114,16 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
     func showConnectionPrompt() {
         
         let ac = UIAlertController(title: "connect to others", message: nil, preferredStyle: .actionSheet)
-        ac.addAction(UIAlertAction(title: "Host a session", style: .default, handler: startHosting)
-        ac.addAction(UIAlertAction(title: "Join a session", style: .default, handler: joinSession)
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(UIAlertAction(title: "Host a session", style: .default, handler: startHosting))
+        ac.addAction(UIAlertAction(title: "Join a session", style: .default, handler: joinSession))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
         
     }
     
     func startHosting(action: UIAlertAction!) {
         
-        mcAdviserAssistant = MCAdvertiserAssistant(serviceType: "hws-project25", discoveryInfo: nil, session:MCSession)
+        mcAdviserAssistant = MCAdvertiserAssistant(serviceType: "hws-project25", discoveryInfo: nil, session: mcSession)
         mcAdviserAssistant.start()
     }
     
