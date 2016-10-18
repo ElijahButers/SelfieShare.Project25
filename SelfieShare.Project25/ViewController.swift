@@ -50,6 +50,17 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         return cell
     }
     
+    // Sessions
+    
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+    }
+    
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+    }
+    
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?) {
+    }
+    
     func importPicture() {
         
         let picker = UIImagePickerController()
@@ -79,7 +90,7 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
     
     func startHosting(action: UIAlertAction!) {
         
-        mcAdviserAssistant = MCAdvertiserAssistant(serviceType: "hws-project", discoveryInfo: nil, session:MCSession)
+        mcAdviserAssistant = MCAdvertiserAssistant(serviceType: "hws-project25", discoveryInfo: nil, session:MCSession)
         mcAdviserAssistant.start()
     }
     
